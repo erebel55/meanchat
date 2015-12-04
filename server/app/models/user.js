@@ -1,11 +1,17 @@
 var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
-	username: String,
+	username: {
+        type: String,
+        unique: true
+    },
 	password: String,
 	email: String,
 	firstName: String,
 	lastName: String
 });
 
-module.exports = mongoose.model('User', userSchema);
+// is this best practice?
+//module.exports = mongoose.model('User', userSchema);
+
+mongoose.model('User', userSchema);

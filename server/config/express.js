@@ -31,7 +31,9 @@ module.exports = function() {
         secret: config.sessionSecret
     }));
 
+    // include the routes
     require('../app/routes/index.js')(app);
+    require('../app/routes/users.js')(app);
 
     //app.use(express.static('./public'));
 
