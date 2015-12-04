@@ -1,0 +1,6 @@
+server/node_modules/
+.*
+!/.gitignore
+client/plugins/
+client/platforms/
+

@@ -1,0 +1,11 @@
+{
+    "name" : "meanchat",
+    "version" : "0.0.1",
+    "dependencies" : {
+        "express" : "4.13.3",
+        "morgan" : "1.6.1",
+        "compression" : "1.6.0",
+        "body-parser" : "1.14.1",
+        "method-override" : "2.3.5"
+    }
+}
