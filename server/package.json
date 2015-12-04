@@ -6,6 +6,8 @@
         "morgan" : "1.6.1",
         "compression" : "1.6.0",
         "body-parser" : "1.14.1",
-        "method-override" : "2.3.5"
+        "method-override" : "2.3.5",
+        "express-session" : "1.12.1",
+        "mongoose" : "4.2.9"
     }
 }
