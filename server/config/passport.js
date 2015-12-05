@@ -9,7 +9,7 @@ module.exports = function() {
     });
 
     passport.deserializeUser(function(id, done) {
-        // TODO: make sure we don't fetch the usernames password here
+        // TODO: make sure we don't fetch the user's password here
         Account.findById(id, function(err, user) {
 			done(err, user);
 		});

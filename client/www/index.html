@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="meanchat">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -30,13 +30,17 @@
         <!-- phonegap -->
         <!--<script src="cordova.js"></script>--> <!-- THIS CAUSES AN INFINITE LOOP ON DESKTOP CHROME -->
         <!-- socket.io -->
-        <script src="/socket.io/socket.io.js'"></script>
+        <script src="/socket.io/socket.io.js"></script>
         <!-- fastclick.js -->
         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+
+        <script src="js/index.js"></script>
     </head>
 
     <body>
-
+        <div class="container">
+            <div ng-view></div> <!-- ng-view is for Angular Templating (inject partial html) -->
+        </div>
     </body>
 </html>
