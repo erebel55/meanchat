@@ -8,8 +8,7 @@ angular.module('meanchat')
 
         function login() {
             // send a post request to the server
-            // TODO: add url to config file
-            $http.post('http://68.42.143.252:3000/login', {foo:'foo'});
+            $http.post(config.serverUrl + '/login', {foo:'foo'});
         }
 
     });
