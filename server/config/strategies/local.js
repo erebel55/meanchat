@@ -21,10 +21,9 @@ module.exports = function() {
                         message: 'Invalid password'
                     });
                 }
-            }
 
-            // call the done callback with the user mongoose object
-            return done(null, user);
-        });
+                // call the done callback with the user mongoose object
+                return done(null, user);
+            });
     }));
 };

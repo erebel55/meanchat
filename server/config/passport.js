@@ -1,7 +1,9 @@
-var passprot = require('passport'),
+var passport = require('passport'),
     mongoose = require('mongoose');
 
+// Define the Passport configuration method
 module.exports = function() {
+    // Load the mongoose User model
     var User = mongoose.model('User');
 
     passport.serializeUser(function(user, done) {
@@ -15,5 +17,6 @@ module.exports = function() {
 		});
     });
 
+    // Load Passport's strategies configuration files
     require('./strategies/local.js')();
 };
