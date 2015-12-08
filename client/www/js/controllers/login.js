@@ -2,7 +2,11 @@
 angular.module('meanchat') // retrieve our module
     .controller('LoginCtrl', function($scope, $location, Auth) {
 
+        // This object is filled by the form
+        $scope.user = {};
+
         $scope.login = function() {
-            Auth.login();
+            // call login from service
+            Auth.login($scope.user);
         };
     });

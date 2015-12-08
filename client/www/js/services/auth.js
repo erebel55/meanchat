@@ -6,9 +6,10 @@ angular.module('meanchat')
             login: login
         });
 
-        function login() {
+        function login(userData) {
+            console.log(userData.username);
+            console.log(userData.password);
             // send a post request to the server
-            $http.post(config.serverUrl + '/login', {foo:'foo'});
+            $http.post(config.serverUrl + '/login', userData);
         }
-
     });

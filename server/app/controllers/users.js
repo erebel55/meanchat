@@ -4,15 +4,16 @@ var User = require('mongoose').model('User'),
 // TESTING
 exports.login = function(req, res, next) {
     console.log('passport authenticate');
-    passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'})(req, res, next);
+    //passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'})(req, res, next);
     //return passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'});
-    /*return passport.authenticate('local', function(err, user, info) {
+    return passport.authenticate('local', function(err, user, info) {
         if (err) {
             console.log('next(err)');
             return next(err);
         }
         if (!user) {
             console.log('!user');
+            console.log(info);
             return res.status(401).json(info);
         }
         req.logIn(user, function(err) {
@@ -24,7 +25,7 @@ exports.login = function(req, res, next) {
 
             res.json(user);
         });
-    });*/
+    })(req, res, next);
 };
 
 // Create a new user
