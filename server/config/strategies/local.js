@@ -30,6 +30,5 @@ module.exports = function() {
                     // call the done callback with the user mongoose object
                     return done(null, user);
                 });
-                //return done(null, false);
             }));
 };

@@ -10,6 +10,10 @@ angular.module('meanchat')
             console.log(userData.username);
             console.log(userData.password);
             // send a post request to the server
-            $http.post(config.serverUrl + '/login', userData);
+            //$http.post(config.serverUrl + '/login', userData);
+
+            // send a post request to the server
+            // this uses promise chaining
+            return $http.post(config.serverUrl + '/login', userData);
         }
     });
