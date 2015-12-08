@@ -1,4 +1,31 @@
-var User = require('mongoose').model('User');
+var User = require('mongoose').model('User'),
+    passport = require('passport');
+
+// TESTING
+exports.login = function(req, res, next) {
+    console.log('passport authenticate');
+    //passport.authenticate('local', {successRedirect:'/', failureRedirect:'/foo'});
+    return passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'});
+    /*return passport.authenticate('local', function(err, user, info) {
+        if (err) {
+            console.log('next(err)');
+            return next(err);
+        }
+        if (!user) {
+            console.log('!user');
+            return res.status(401).json(info);
+        }
+        req.logIn(user, function(err) {
+            if (err) {
+                console.log('err');
+                return next(err);
+            }
+            console.log('logged in ' + user);
+
+            res.json(user);
+        });
+    });*/
+};
 
 // Create a new user
 exports.create = function(req, res, next) {

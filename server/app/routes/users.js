@@ -1,9 +1,10 @@
-var users = require('../controllers/users');
+var users = require('../controllers/users.js');
 
 module.exports = function(app) {
     /*app.route('/users')
     .post(users.create)
     .get(users.list);*/
 
-    app.post('/login', function(){console.log('received post for /login');});
+    //app.post('/login', users.login);
+    app.post('/login', users.login());
 };
