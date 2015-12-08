@@ -4,8 +4,8 @@ var User = require('mongoose').model('User'),
 // TESTING
 exports.login = function(req, res, next) {
     console.log('passport authenticate');
-    //passport.authenticate('local', {successRedirect:'/', failureRedirect:'/foo'});
-    return passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'});
+    passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'})(req, res, next);
+    //return passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'});
     /*return passport.authenticate('local', function(err, user, info) {
         if (err) {
             console.log('next(err)');
